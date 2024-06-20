@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title> My name is ... 2 </title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" cotent="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+	<link rel="stylesheet" type="text/css" href="./styles/main.css">
+
+</head>
+
+<body>
+	<header>
+	</header>
+
+	<main>
+
+		<div class="leftside">
+			<span>Student addition form</span> <br> <br>
+
+			<div class="warning"></div>
+
+			<form action="/">
+				<label for="name">Name:</label><br>
+				<input type="text" name="name" placeholder="Enter name" class="name"><br> <br>
+
+				<label for="sex">Sex:</label><br>
+				<select name="sex" class="sex">
+					<option value="male">Male</option>
+					<option value="female">Female</option>
+				</select>
+				<br><br>
+
+
+
+				<label for="dateOfBirth">Date of birth:</label><br>
+				<input type="date" name="dateOfBirth" class="dateOfBirth"><br><br>
+
+				<input type="submit" value="Add a student" class="btn">
+			</form>
+			<br><br>
+
+			<div class="outStnt"></div>
+
+		</div>
+
+		<div class="rightside">
+			<span> Students list: </span><br><br>
+			<div class="outStnts"></div> <br><br>
+			<button type="button" class="sortNameBtn"> Sort by name </button>
+			<button type="button" class="sortSexBtn"> Sort by sex </button>
+			<button type="button" class="sortAgeBtn"> Sort by age </button>
+			<br><br>
+
+			<label for="order">Sorting in reverse order:</label>
+			<input type="checkbox" name="order" class="order"><br><br>
+
+		</div>
+
+
+
+
+
+
+
+	</main>
+
+
+
+
+
+
+
+	<script src="./main.js"></script>
+</body>
+
+</html>
