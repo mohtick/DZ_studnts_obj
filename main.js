@@ -87,22 +87,25 @@ btn.addEventListener("click", addStud);
 let sortStudName = () => {
     students.sort((a, b) => {
         let nameA = a.name.toLowerCase(), nameB = b.name.toLowerCase();
-        if (order.checked) {
-            if (nameA > nameB)
+        if (!order.checked) {
+            if (nameA < nameB)
                 return -1;
             if (nameA > nameB)
                 return 1;
-            return 0
+            if (nameA === nameB) {
+                return a.age - b.age
+            }
+
         } else {
-            if (nameA < nameB)
+
+            if (nameA > nameB)
                 return -1;
             if (nameA < nameB)
                 return 1;
-
-            return 0
+            if (nameA === nameB) {
+                return b.age - a.age
+            }
         }
-
-
     })
 
     let result = '';
@@ -122,21 +125,31 @@ sortNameBtn.addEventListener("click", sortStudName);
 let sortStudSex = () => {
     students.sort((a, b) => {
         let sexA = a.sex.toLowerCase(), sexB = b.sex.toLowerCase();
-        if (order.checked) {
-            if (sexA > sexB)
+        if (!order.checked) {
+            if (sexA < sexB)
                 return -1;
             if (sexA > sexB)
                 return 1;
-            return 0
+            if (sexA === sexB) {
+                let nameA = a.name.toLowerCase(), nameB = b.name.toLowerCase();
+                if (nameA < nameB)
+                    return -1;
+                if (nameA > nameB)
+                    return 1;
+            }
         } else {
-            if (sexA < sexB)
+            if (sexA > sexB)
                 return -1;
             if (sexA < sexB)
                 return 1;
-
-            return 0
+            if (sexA === sexB) {
+                let nameA = a.name.toLowerCase(), nameB = b.name.toLowerCase();
+                if (nameA > nameB)
+                    return -1;
+                if (nameA < nameB)
+                    return 1;
+            }
         }
-
 
     })
 
@@ -158,13 +171,26 @@ let sortStudAge = () => {
     students.sort((a, b) => {
 
         if (!order.checked) {
+            if (a.age === b.age) {
+                let nameA = a.name.toLowerCase(), nameB = b.name.toLowerCase();
+                if (nameA < nameB)
+                    return -1;
+                if (nameA > nameB)
+                    return 1;
+            }
             return a.age - b.age
 
         } else {
-            return b.age - a.age
+            if (a.age === b.age) {
+                let nameA = a.name.toLowerCase(), nameB = b.name.toLowerCase();
+                if (nameA > nameB)
+                    return -1;
+                if (nameA < nameB)
+                    return 1;
+            }
         }
 
-
+        return b.age - a.age
     })
 
     let result = '';
